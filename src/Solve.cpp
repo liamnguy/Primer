@@ -6,23 +6,21 @@ using namespace std;
 
 int main()
 {
-	string line;
-	string dArray[16];
+	double dArray[16];                     //Initialize array
 	ifstream params ("params.dat");
 
 	if (params.is_open())
 	{
-		params.seekg(16);
+		string textline;
+		getline(params, textline);    //Skip first line
 
 		for (int i=0; i < 16; ++i)
 			{
-				params >> dArray[i];
+				params >> dArray[i];  //Insert whitespace separated values into corresponding elements of the array
 			}
 
-		for (int i=0; i < 16; i++)
-		{
-			cout << dArray[i] << " ";
-		}
-	params.close();
+		params.close();               //Close read file
 	}
+
+	
 }
