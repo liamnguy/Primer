@@ -4,7 +4,7 @@
 #include <fstream>
 using namespace std;
 
-main int()
+int main()
 {
 	string line;
 	string dArray[16];
