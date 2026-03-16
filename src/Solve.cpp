@@ -40,5 +40,6 @@ int main()
 	}
 
 	double x_i = 1
-	double x
+	
+	
 }
