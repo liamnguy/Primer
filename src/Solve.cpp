@@ -11,7 +11,7 @@ int main()
 	ifstream params ("params.dat");
 	if (params.is_open())
 	{
-		params.seekg (0,16);
+		params.seekg (16);
 		while (getline(params,line))
 		{
 			for (int i=0; i < 16; ++i)
@@ -19,6 +19,6 @@ int main()
 				params >> dArray[i];
 			}
 		}
-		cout << dArray
+		cout << dArray;
 	}
 }
