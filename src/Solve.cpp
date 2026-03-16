@@ -19,6 +19,10 @@ int main()
 				params >> dArray[i];
 			}
 		}
-		cout << dArray;
+		int size_Array = sizeof(dArray);
+		for (int i=0, i < size_Array, i++)
+		{
+			cout << dArray[i] << " ";
+		}
 	}
 }
