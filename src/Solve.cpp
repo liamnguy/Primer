@@ -4,6 +4,17 @@
 #include <fstream>
 using namespace std;
 
+long double solution (long double delta, unsigned long num)
+{
+	long double x[num];
+	x[0] = 1;
+	for (int i=1; i<=num; i++)
+	{
+		x[i] = (1 - (3*delta))*x[i-1];
+	}
+	return x;
+}
+
 int main()
 {
 	double dArray[16];          //Initialize array
@@ -22,8 +33,8 @@ int main()
 		params.close();          //Close read file
 	}
 
-	double delta_t[8];
-	double num_t[8];
+	long double delta_t[8];
+	unsigned long num_t[8];
 	for (int i=0; i<16; i += 2)          //Separate array into two vectors for delta t, and number of steps of t
 	{
 		for (int j=0; j<8; ++j)
@@ -38,8 +49,4 @@ int main()
 			num_t[j] = dArray[i];
 		}
 	}
-
-	double x_i = 1
-	
-	
 }
