@@ -39,11 +39,11 @@ int main()
 			num_t.insert(num_t.begin()+j, dArray[i]);
 		}
 	}
-	for (int i=0; i<8; i++)
+	for (int i=0; i<delta_t.size(); i++)
 	{
 		cout << delta_t.at(i);
 	}
-	for (int i=0; i<8; i++)
+	for (int i=0; i<num_t.size(); i++)
 	{
 		cout << num_t.at(i);
 	}
