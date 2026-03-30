@@ -2,18 +2,8 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <vector>
 using namespace std;
-
-long double solution (long double delta, unsigned long num)
-{
-	long double x[num];
-	x[0] = 1;
-	for (int i=1; i<=num; i++)
-	{
-		x[i] = (1 - (3*delta))*x[i-1];
-	}
-	return x;
-}
 
 int main()
 {
@@ -33,20 +23,28 @@ int main()
 		params.close();          //Close read file
 	}
 
-	long double delta_t[8];
-	unsigned long num_t[8];
+	vector<double> delta_t(8,0);
+	vector<double> num_t(8,0);
 	for (int i=0; i<16; i += 2)          //Separate array into two vectors for delta t, and number of steps of t
 	{
 		for (int j=0; j<8; ++j)
 		{
-			delta_t[j] = dArray[i];
+			delta_t.insert(delta_t.begin()+j, dArray[i]);
 		}
 	}
 	for (int i=1; i<16; i += 2)
 	{
 		for (int j=0; j<8; ++j)
 		{
-			num_t[j] = dArray[i];
+			num_t.insert(num_t.begin()+j, dArray[i]);
 		}
+	}
+	for (int i=0; i<8; i++)
+	{
+		cout << delta_t.at(i);
+	}
+	for (int i=0; i<8; i++)
+	{
+		cout << num_t.at(i);
 	}
 }
