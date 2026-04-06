@@ -5,9 +5,16 @@
 #include <vector>
 using namespace std;
 
-vector<double> Solve (vector<double> a, vector<double> b)
+vector<double> Solve (double delta_t, double num_t)
 {
-	
+	vector<double> output;
+	output.at(0) = 1;
+       	for (int i=1; i<num_t; ++i)
+	{
+		output.push_back( (1-3*delta_t) * output.at(i-1) ); 
+	}
+	return output;
+}	
 
 int main()
 {
@@ -32,8 +39,13 @@ int main()
 		}	
 		params.close();
 	}
+	
 	for (int i=0; i<delta_t.size(); ++i)
 	{
-		cout << delta_t.at(i) << ", " << num_t.at(i) << endl;
+		vector<double> Answer = Solve(delta_t[i], num_t[i]);
+		for (int i=0; i<Answer.size(); ++i)
+		{
+			cout << Answer[i];
+		}
 	}
 }
