@@ -47,5 +47,6 @@ int main()
 		{
 			cout << Answer[i];
 		}
+		cout << endl;
 	}
 }
